@@ -172,6 +172,12 @@ void randomizeParameter(std::vector<int>& matrix, int& width, int seed, int powe
 
 	}
 
+	if (power == 0 && width != 128)
+	{
+		width = 128;
+		matrix.resize(width * width, 0);
+	}
+
 	if (bHashEnabled)
 	{
 		for (int x = 0; x < width; x++)
